@@ -1,0 +1,70 @@
+import React from 'react';
+import SignUp from './Screen/SignUp';
+import Login from './Screen/Login';
+import ResetPass from './Screen/ResetPass';
+import OTP from './Screen/OTP';
+import Home from './Screen/Home';
+import Profile from './Screen/Profile';
+import Host from './Screen/Host';
+import Tournament from './Screen/Tournament';
+
+import { NavigationContainer } from '@react-navigation/native';
+import {createDrawerNavigator} from 'react-navigation-drawer';
+import { createStackNavigator } from '@react-navigation/stack';
+import API from './Screen/CricketAPI';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <>
+      {/* <API /> */}
+      {/* <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={SignUp}/>
+          <Stack.Screen name="ResetPass" component={ResetPass}/>
+          <Stack.Screen name="OTP" component={OTP}/>
+          <Stack.Screen name="Home" component={Home}/>
+        </Stack.Navigator>
+      </NavigationContainer> */}
+      {/* <Profile /> */}
+      {/* <Host /> */}
+      <Tournament />
+    </>
+  );
+};
+
+export default App;
+
+
+// fgy009u5I387XW1zmvLM3ocBwdUjlmZ1pAxuHy37DUi4rZoNpLskwiIxKWx5 = API Key
+
+import * as React from 'react';
+import { Button, View } from 'react-native';
+import SignUp from './Screen/SignUp';
+import Login from './Screen/Login';
+import Home from './Screen/Home';
+import Profile from './Screen/Profile';
+import Host from './Screen/Host';
+import Tournament from './Screen/Tournament';
+
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Drawer = createDrawerNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="SignUp" component={SignUp} />
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Profile" component={Profile} />
+        <Drawer.Screen name="Host" component={Host} />
+        <Drawer.Screen name="Tournament" component={Tournament} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  )
+}
